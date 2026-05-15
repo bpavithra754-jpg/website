@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store - Shopping Cart</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🛍️ Sai Store</h1>
+            <div class="header-right">
+                <input type="text" id="search-box" placeholder="Search products...">
+                <div class="cart-icon" onclick="toggleCart()">
+                    <span>🛒</span>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="products-section">
+            <div class="filters">
+                <h3>Filter by Category</h3>
+                <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+                <button class="filter-btn" onclick="filterProducts('electronics')">Electronics</button>
+                <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+                <button class="filter-btn" onclick="filterProducts('gadgets')">Gadgets</button>
+            </div>
+
+            <div class="products">
+                <h2>Products</h2>
+                <div id="products-container" class="products-grid"></div>
+            </div>
+        </section>
+
+        <aside class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="close-cart" onclick="toggleCart()">✕</button>
+            </div>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <div class="cart-total">
+                    <strong>Subtotal: $<span id="subtotal">0.00</span></strong>
+                </div>
+                <div class="cart-tax">
+                    <strong>Tax (10%): $<span id="tax">0.00</span></strong>
+                </div>
+                <div class="cart-grand-total">
+                    <strong>Total: $<span id="total">0.00</span></strong>
+                </div>
+                <button id="checkout-btn" class="checkout-btn">Checkout</button>
+                <button id="clear-cart-btn" class="clear-cart-btn">Clear Cart</button>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Modal for product details -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="">
+                <div class="modal-info">
+                    <h2 id="modal-name"></h2>
+                    <p id="modal-description"></p>
+                    <div class="modal-rating">
+                        <span id="modal-rating">⭐⭐⭐⭐⭐</span>
+                        <span id="modal-reviews">(0 reviews)</span>
+                    </div>
+                    <div class="modal-price">
+                        <p>Price: $<span id="modal-price">0.00</span></p>
+                    </div>
+                    <div class="quantity-selector">
+                        <label>Quantity:</label>
+                        <button onclick="decreaseQuantity()">-</button>
+                        <input type="number" id="modal-quantity" value="1" min="1">
+                        <button onclick="increaseQuantity()">+</button>
+                    </div>
+                    <button id="modal-add-btn" class="add-to-cart-modal">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
