@@ -103,6 +103,16 @@ const productsData = [
         image: "💡",
         rating: 4.7,
         reviews: 289
+    },
+    {
+        id: 11,
+        name: "Wireless Mouse",
+        category: "gadgets",
+        price: 1000,
+        description: "Ergonomic wireless mouse with precise tracking",
+        image: "🖱️",
+        rating: 4,
+        reviews: 200
     }
 ];
 
