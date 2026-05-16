@@ -264,6 +264,7 @@ function updateCart() {
     
     if (cart.length === 0) {
         cartContainer.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
+        document.getElementById('cart-count').textContent = '0';
         updateTotals();
         return;
     }
